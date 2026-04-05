@@ -1,1 +1,0 @@
-# thinkpalm-agentai-Aryamol-Lab2-QA-AI-Test-Case-Generator
