@@ -4,13 +4,13 @@ This repository contains a professional-grade, production-quality automated test
 
 ## 📁 Project Structure
 
-- `tests/`: Contains the Playwright test scripts.
-  - `login_allure.spec.js`: **[Latest]** Advanced suite with Allure annotations, helper functions, and 10+ scenarios.
-  - `login.spec.js`: Standard Playwright test suite.
-- `allure-results/`: Raw data generated after test execution.
-- `allure-report/`: Compiled interactive HTML report produced by Allure.
-- `playwright.config.js`: Centralized configuration for browser settings and reporters.
-- `package.json`: Project dependencies and reporting scripts.
+- `src/`: Core automation project directory.
+  - `tests/`: Contains the Playwright test scripts.
+    - `login_allure.spec.js`: **[Latest]** Advanced suite with Allure annotations, helper functions, and 10+ scenarios.
+  - `playwright.config.js`: Centralized configuration for browser settings and reporters.
+  - `package.json`: Project dependencies and reporting scripts.
+- `screenshots/`: Contains visual documentation of test results.
+  - `allure-report.png`: Screenshot of the generated Allure report.
 
 ## 🛠️ Prerequisites
 
@@ -20,11 +20,15 @@ This repository contains a professional-grade, production-quality automated test
 ## 🚀 Setup
 
 1. Clone the repository and navigate to the project directory.
-2. Install dependencies:
+2. Navigate to the `src` directory:
+   ```bash
+   cd src
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
-3. Install Playwright browsers:
+4. Install Playwright browsers:
    ```bash
    npx playwright install
    ```
@@ -34,12 +38,14 @@ This repository contains a professional-grade, production-quality automated test
 ### Standard Execution
 To run all tests in headless mode:
 ```bash
+cd src
 npm test
 ```
 
 ### Allure Reporting Suite
 To run the comprehensive suite with Allure results:
 ```bash
+cd src
 npx playwright test tests/login_allure.spec.js
 ```
 
@@ -48,16 +54,19 @@ npx playwright test tests/login_allure.spec.js
 ### Allure Report (Recommended)
 1. **Generate**: Convert raw results to an interactive HTML report:
    ```bash
+   cd src
    npm run allure:generate
    ```
 2. **Open**: Launch the report in your default browser:
    ```bash
+   cd src
    npm run allure:open
    ```
 
 ### Playwright HTML Report
 To view the default Playwright report:
 ```bash
+cd src
 npx playwright show-report
 ```
 
